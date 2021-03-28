@@ -1,9 +1,9 @@
 
-//count number of words typed in the text area
-//when user press start, times should start
+
+
 
 import { useEffect, useState, useRef } from "react"
-     const STARTING_TIME = 5
+     const STARTING_TIME = 60
 
 export default function WritingText(){
     const [initialText, setInitialText] = useState("")
@@ -46,7 +46,7 @@ export default function WritingText(){
         textBoxRef.current.focus()
     }
     return(
-        <>
+        <div className="main">
         <h1>Please type here</h1>
         <textarea 
             ref = {textBoxRef}
@@ -54,8 +54,9 @@ export default function WritingText(){
             value = {initialText}
             disabled = {!startTimer}
         />
-         <br />  <br /> 
+         <br />  <br /> <br /> 
         Time remaining : {timeRemaining}
+        <br />  <br /> <br /> 
         <button
         onClick={restartStage}
         disabled = {startTimer}
@@ -64,8 +65,9 @@ export default function WritingText(){
             <br /> 
             
             <br />
-        Word count : {wordCount}
+        Total words you Count : {wordCount}
+      
         
-        </>
+        </div>
     )
 }
